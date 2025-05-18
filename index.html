@@ -14,7 +14,7 @@
         <h2>COMP 4541 Course Project</h2>
 
         <p>This is a Decentralized Lending DApp that lends ETH with 2% daily interest.</p>
-        <p>Note: Amount of collateral must be greater than the half of the loan principal.</p>
+        <p>Note: Amount of collateral must be greater than the loan principal.</p>
         <div class="wallet-connection-container">
             <img src="icons/wallet-icon.png" >
             <p>Connect your wallet to the app now!</p>
@@ -28,6 +28,9 @@
                 <img src="icons/collateral-icon.png" >
                 <p class="collateral-header">Depositing/Withdrawing Collateral</p>
                 <p class="collateral-balance-container">Your collateral balance: <b class="collateral-balance"></b> ETH</p>
+                <button 
+                        onclick="getCollateralBalance()"
+                        class="refresh-balance-button">Refresh Collateral Balance</button>
                 <div>
                     <button 
                         onclick="deposit()"
@@ -50,6 +53,9 @@
                 <img src="icons/loan-icon.png" >
                 <p class="borrowing-header">Borrowing/Repaying Loan</p>
                 <p class="loan-balance-container">Your loan balance: <b class="loan-balance"></b> ETH</p>
+                <button 
+                        onclick="getLoanBalance()"
+                        class="refresh-balance-button">Refresh Loan Balance</button>
                 <div>
                     <button 
                         onclick="borrow()"

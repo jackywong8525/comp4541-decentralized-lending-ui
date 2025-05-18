@@ -1,4 +1,4 @@
-const contractAddress = "0xDD269379C82F1146824cf4BfdB87c263A8DF6806";
+const contractAddress = "0x0c73A436967902dB93ee239285c8fCb90755c2ad";
 let contractABI = null;
 let loaded = false;
 
@@ -20,7 +20,7 @@ async function connectWallet() {
         await window.ethereum.request({ method: "eth_requestAccounts" });
         userAccount = (await web3.eth.getAccounts())[0];
         contract = new web3.eth.Contract(contractABI, contractAddress);
-        alert(`Connected to the address: ${userAccount}`);
+        alert(`Connected to the wallet address: ${userAccount}`);
         connected = true;
         document.querySelector('.contract-operation-container').style.display = "flex";
 
@@ -46,8 +46,8 @@ async function deposit() {
             from: userAccount, 
             value: web3.utils.toWei(depositAmount, "ether") 
         });
-        alert("Deposited!");
-        document.querySelector('.deposit-input').value = 0;
+        alert("Collateral deposited successfully!");
+        document.querySelector('.deposit-input').value = "";
         await getCollateralBalance();
 
         toggleLoading();
@@ -65,8 +65,8 @@ async function withdraw() {
         await contract.methods.withdraw(web3.utils.toWei(withdrawAmount, "ether")).send({
             from: userAccount 
         });
-        alert("Withdrew!");
-        document.querySelector('.withdraw-input').value = 0;
+        alert("Collateral withdrawn successfully!");
+        document.querySelector('.withdraw-input').value = "";
         await getCollateralBalance();
 
         toggleLoading();
@@ -82,8 +82,8 @@ async function borrow() {
         const borrowAmount = document.querySelector('.borrow-input').value;
 
         await contract.methods.borrow(web3.utils.toWei(borrowAmount, "ether")).send({ from: userAccount });
-        alert("Borrowed!");
-        document.querySelector('.borrow-input').value = 0;
+        alert("Loan borrowed successfully!");
+        document.querySelector('.borrow-input').value = "";
         await getLoanBalance();
 
         toggleLoading();
@@ -101,8 +101,8 @@ async function repay() {
             from: userAccount, 
             value: web3.utils.toWei(repayAmount, "ether") 
         });
-        alert("Repaid Loan!");
-        document.querySelector('.repay-input').value = 0;
+        alert("Loan repaid successfully!");
+        document.querySelector('.repay-input').value = "";
         await getLoanBalance();
         toggleLoading();
     } catch(error){

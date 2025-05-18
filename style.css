@@ -104,6 +104,7 @@ input {
     min-height: 600px;
     margin: 10px;
     padding: 10px;
+    gap: 10px;
 
     border: 1px solid var(--MAIN-THEME-COLOR);
     border-radius: 10px;
@@ -115,6 +116,7 @@ input {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 10px;
 
     margin: 20px;
     border-radius: 10px;
@@ -128,6 +130,11 @@ input {
 
 .borrowing {
     border: 1px solid darkgreen;
+}
+
+.refresh-balance-button {
+    background-color: var(--MAIN-THEME-COLOR);
+    color: whitesmoke;
 }
 
 .borrowing-header,
