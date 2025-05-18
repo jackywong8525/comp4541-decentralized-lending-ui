@@ -1,0 +1,96 @@
+:root {
+    --MAIN-THEME-COLOR: goldenrod;
+}
+
+body {
+    font-family:  Calibri, 'Trebuchet MS', sans-serif;
+    background-color: black;
+    color: var(--MAIN-THEME-COLOR);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    border-radius: 10px;
+    height: 50px;
+    width: 200px;
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(85%);
+}
+
+input {
+    border-radius: 10px;
+    height: 30px;
+    width: 300px;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+.wallet-connection-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    height: 200px;
+    margin: 10px;
+
+    border: 1px solid var(--MAIN-THEME-COLOR);
+    border-radius: 10px;
+}
+
+.connect-button,
+.deposit-button {
+    background-color: var(--MAIN-THEME-COLOR);
+    color: whitesmoke;
+}
+
+.withdraw-button {
+    background-color: darkred;
+    color: whitesmoke;
+}
+
+.borrow-button,
+.repay-button {
+    background-color: darkgreen;
+    color: whitesmoke;
+}
+
+.contract-operation-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90vw;
+    height: 600px;
+    margin: 10px;
+    padding: 10px;
+
+    border: 1px solid var(--MAIN-THEME-COLOR);
+    border-radius: 10px;
+}
+
+.borrowing,
+.collateral {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.borrowing-header,
+.collateral-header {
+    font-weight: bolder;
+}

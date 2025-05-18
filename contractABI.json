@@ -1,0 +1,96 @@
+[
+    {
+        "inputs": [],
+        "stateMutability": "payable",
+        "type": "function",
+        "name": "deposit"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function",
+        "name": "withdraw"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function",
+        "name": "borrow"
+    },
+    {
+        "inputs": [],
+        "stateMutability": "payable",
+        "type": "function",
+        "name": "repay"
+    },
+    {
+        "inputs": [],
+        "stateMutability": "view",
+        "type": "function",
+        "name": "getCollateralBalance",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "collateralBalance",
+                "type": "uint256"
+            }
+        ]
+    },
+    {
+        "inputs": [],
+        "stateMutability": "view",
+        "type": "function",
+        "name": "getLoanBalance",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "collateralBalance",
+                "type": "uint256"
+            }
+        ]
+    },
+    {
+        "inputs": [],
+        "stateMutability": "view",
+        "type": "function",
+        "name": "getContractInfo",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "currentBlock",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "timestamp",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "miner",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "gasLimit",
+                "type": "uint256"
+            }
+        ]
+    },
+    {
+        "stateMutability": "payable",
+        "type": "receive"
+    }
+]
