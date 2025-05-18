@@ -8,11 +8,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4/web3.min.js"></script>
 </head>
 <body>
-    <h1>Decentralized Lending DApp</h1>
-    <h2>COMP 4541 Course Project</h2>
 
     <div class="app-container">
+        <h1>Decentralized Lending DApp</h1>
+        <h2>COMP 4541 Course Project</h2>
+
+        <p>This is a Decentralized Lending DApp that lends ETH with 2% daily interest.</p>
+        <p>Note: Amount of collateral must be greater than the half of the loan principal.</p>
         <div class="wallet-connection-container">
+            <img src="icons/wallet-icon.png" >
             <p>Connect your wallet to the app now!</p>
             <button 
                 onclick="connectWallet()"
@@ -21,6 +25,7 @@
 
         <div class="contract-operation-container">
             <div class="collateral">
+                <img src="icons/collateral-icon.png" >
                 <p class="collateral-header">Depositing/Withdrawing Collateral</p>
                 <p class="collateral-balance-container">Your collateral balance: <b class="collateral-balance"></b> ETH</p>
                 <div>
@@ -42,6 +47,7 @@
                 </div>
             </div>
             <div class="borrowing">
+                <img src="icons/loan-icon.png" >
                 <p class="borrowing-header">Borrowing/Repaying Loan</p>
                 <p class="loan-balance-container">Your loan balance: <b class="loan-balance"></b> ETH</p>
                 <div>
@@ -65,6 +71,8 @@
             </div>
         </div>
     </div>
+
+    <div class="message-container">Loading...</div>
     
 
     <script src="app.js"></script>
