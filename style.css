@@ -78,19 +78,28 @@ input {
     color: whitesmoke;
 }
 
-.connect-button,
-.deposit-button {
+.connect-button {
     background-color: var(--MAIN-THEME-COLOR);
     color: whitesmoke;
 }
 
-.withdraw-button {
+
+.withdraw-button,
+.withdraw-USDC-button,
+.refund-button,
+.refund-USDC-button,
+.repay-button,
+.repay-USDC-button {
     background-color: darkred;
     color: whitesmoke;
 }
 
+.deposit-button,
+.deposit-USDC-button,
 .borrow-button,
-.repay-button {
+.borrow-USDC-button,
+.fund-button,
+.fund-USDC-button {
     background-color: darkgreen;
     color: whitesmoke;
 }
@@ -111,7 +120,8 @@ input {
 }
 
 .borrowing,
-.collateral {
+.collateral,
+.funding {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,12 +142,35 @@ input {
     border: 1px solid darkgreen;
 }
 
-.refresh-balance-button {
+.funding {
+    border: 1px solid darkred;
+}
+
+.refresh-balance-button,
+.refresh-price-button {
     background-color: var(--MAIN-THEME-COLOR);
     color: whitesmoke;
 }
 
 .borrowing-header,
-.collateral-header {
+.collateral-header,
+.funding-header {
     font-weight: bolder;
+}
+
+.balance-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.loan-balance-container,
+.contract-balance-container,
+.available-loan-balance-container,
+.price-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

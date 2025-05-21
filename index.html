@@ -27,14 +27,18 @@
             <div class="collateral">
                 <img src="icons/collateral-icon.png" >
                 <p class="collateral-header">Depositing/Withdrawing Collateral</p>
-                <p class="collateral-balance-container">Your collateral balance: <b class="collateral-balance"></b> ETH</p>
+                <p class="collateral-balance-container">Your collateral balance for: 
+                    <div>ETH: <b class="collateral-balance-ETH"></b> ETH</div>
+                    <div>USDC: <b class="collateral-balance-USDC"></b> USDC</div>
+                </p>
                 <button 
                         onclick="getCollateralBalance()"
                         class="refresh-balance-button">Refresh Collateral Balance</button>
+                
                 <div>
                     <button 
-                        onclick="deposit()"
-                        class="deposit-button">Deposit</button>
+                        onclick="depositETH()"
+                        class="deposit-button">Deposit ETH</button>
                     <input 
                         type="number" class="deposit-input"
                         placeholder="in ETH" />
@@ -42,24 +46,61 @@
 
                 <div>
                     <button 
-                        onclick="withdraw()"
-                        class="withdraw-button">Withdraw</button>
+                        onclick="withdrawETH()"
+                        class="withdraw-button">Withdraw ETH</button>
                     <input 
                         type="number" class="withdraw-input"
                         placeholder="in ETH" />
+                </div>
+
+                <div>
+                    <button 
+                        onclick="depositUSDC()"
+                        class="deposit-USDC-button">Deposit USDC</button>
+                    <input 
+                        type="number" class="deposit-USDC-input"
+                        placeholder="in USDC" />
+                </div>
+
+                <div>
+                    <button 
+                        onclick="withdrawUSDC()"
+                        class="withdraw-USDC-button">Withdraw USDC</button>
+                    <input 
+                        type="number" class="withdraw-USDC-input"
+                        placeholder="in USDC" />
                 </div>
             </div>
             <div class="borrowing">
                 <img src="icons/loan-icon.png" >
                 <p class="borrowing-header">Borrowing/Repaying Loan</p>
-                <p class="loan-balance-container">Your loan balance: <b class="loan-balance"></b> ETH</p>
+                <div class="balance-container">
+                    <div class="contract-balance-container">Available funds in the pool:
+                        <div>ETH: <b class="contract-balance-ETH"></b> ETH</div>
+                        <div>USDC: <b class="contract-balance-USDC"></b> USDC</div>
+                    </div>
+                    <!-- <div class="available-loan-balance-container">Amount that you can borrow:
+                        <div>ETH: <b class="available-loan-balance-ETH"></b> ETH</div>
+                        <div>USDC: <b class="available-loan-balance-USDC"></b> USDC</div>
+                    </div> -->
+                    <div class="price-container">
+                        Current price: <div class="ETH-to-USDC-price"></div> USDC/ETH
+                    </div>
+                    <div class="loan-balance-container">Your loan balance for:
+                        <div>ETH: <b class="loan-balance-ETH"></b> ETH</div>
+                        <div>USDC: <b class="loan-balance-USDC"></b> USDC</div>
+                    </div> 
+                </div>
+                <button 
+                        onclick="getETHtoUSDCPrice()"
+                        class="refresh-price-button">Refresh Price</button>
                 <button 
                         onclick="getLoanBalance()"
                         class="refresh-balance-button">Refresh Loan Balance</button>
                 <div>
                     <button 
-                        onclick="borrow()"
-                        class="borrow-button">Borrow</button>
+                        onclick="borrowETH()"
+                        class="borrow-button">Borrow ETH Loan</button>
                     <input 
                         type="number" class="borrow-input"
                         placeholder="in ETH" />
@@ -67,12 +108,70 @@
                 
                 <div>
                     <button 
-                        onclick="repay()"
-                        class="repay-button">Repay Loan</button>
+                        onclick="repayETH()"
+                        class="repay-button">Repay ETH Loan</button>
                     <input 
                         type="number"
                         class="repay-input"
                         placeholder="in ETH" />
+                </div>
+
+                <div>
+                    <button 
+                        onclick="borrowUSDC()"
+                        class="borrow-USDC-button">Borrow USDC Loan</button>
+                    <input 
+                        type="number" class="borrow-USDC-input"
+                        placeholder="in USDC" />
+                </div>
+                
+                <div>
+                    <button 
+                        onclick="repayUSDC()"
+                        class="repay-USDC-button">Repay USDC Loan</button>
+                    <input 
+                        type="number"
+                        class="repay-USDC-input"
+                        placeholder="in USDC" />
+                </div>
+            </div>
+
+            <div class="funding">
+                <p class="funding-header">For Owner Only</p>
+                <div>
+                    <button 
+                        onclick="fundETH()"
+                        class="fund-button">Fund ETH</button>
+                    <input 
+                        type="number" class="fund-input"
+                        placeholder="in ETH" />
+                </div>
+
+                <div>
+                    <button 
+                        onclick="fundToken()"
+                        class="fund-USDC-button">Fund Token</button>
+                    <input 
+                        type="number" class="fund-USDC-input"
+                        placeholder="in USDC" />
+                </div>
+
+                <div>
+                    <button 
+                        onclick="refundETH()"
+                        class="refund-button">Refund ETH</button>
+                    <input 
+                        type="number" class="refund-input"
+                        placeholder="in ETH" />
+                </div>
+
+                <div>
+                    <button 
+                        onclick="refundToken()"
+                        class="refund-USDC-button">Refund Token</button>
+                    <input 
+                        type="number" class="refund-USDC-input"
+                        placeholder="in USDC" />
                 </div>
             </div>
         </div>
